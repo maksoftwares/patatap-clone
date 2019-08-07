@@ -1,0 +1,231 @@
+<html>
+    <head>
+        <title>Circles</title>
+		<script type="text/javascript" src="paper-full.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="Circles.css">
+        <!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+
+	var sound1 = new Howl({
+		src: ['sounds/bubbles.mp3']
+	  });
+	  var sound2 = new Howl({
+		src: ['sounds/clay.mp3']
+	  });
+	  var sound3 = new Howl({
+		src: ['sounds/confetti.mp3']
+	  });
+	  var sound4 = new Howl({
+		src: ['sounds/corona.mp3']
+	  });
+	  var sound5 = new Howl({
+		src: ['sounds/dotted-spiral.mp3']
+	  });
+	  var sound6 = new Howl({
+		src: ['sounds/flash-1.mp3']
+	  });
+	  var sound7 = new Howl({
+		src: ['sounds/flash-2.mp3']
+	  });
+	  var sound8 = new Howl({
+		src: ['sounds/flash-3.mp3']
+	  });
+	  var sound9 = new Howl({
+		src: ['sounds/glimmer.mp3']
+	  });
+	  var sound10 = new Howl({
+		src: ['sounds/moon.mp3']
+	  });
+	  var sound11 = new Howl({
+		src: ['sounds/pinwheel.mp3']
+	  });
+	  var sound12 = new Howl({
+		src: ['sounds/piston-1.mp3']
+	  });
+	  var sound13 = new Howl({
+		src: ['sounds/piston-2.mp3']
+	  });
+	  var sound14 = new Howl({
+		src: ['sounds/piston-3.mp3']
+	  });
+	  var sound15 = new Howl({
+		src: ['sounds/prism-1.mp3']
+	  });
+	  var sound16 = new Howl({
+		src: ['sounds/prism-2.mp3']
+	  });
+	  var sound17 = new Howl({
+		src: ['sounds/prism-3.mp3']
+	  });
+	  var sound18 = new Howl({
+		src: ['sounds/squiggle.mp3']
+	  });
+	  var sound19 = new Howl({
+		src: ['sounds/strike.mp3']
+	  });
+	  var sound20 = new Howl({
+		src: ['sounds/suspension.mp3']
+	  });
+	  var sound21 = new Howl({
+		src: ['sounds/timer.mp3']
+	  });
+	  var sound22 = new Howl({
+		src: ['sounds/ufo.mp3']
+	  });
+	  var sound23 = new Howl({
+		src: ['sounds/veil.mp3']
+	  });
+	  var sound24 = new Howl({
+		src: ['sounds/wipe.mp3']
+	  });
+	  var sound25 = new Howl({
+		src: ['sounds/clay.mp3']
+	  });
+	  var sound26 = new Howl({
+		src: ['sounds/zig-zag.mp3']
+	  });
+	  
+
+
+	var circles = new Array();
+
+	function onKeyDown(event)
+	{
+			var maxPoint = new Point(view.size.width , view.size.height);
+			var randomPoint = new Point.random();
+			var point = maxPoint * randomPoint;
+			var newCircle = new Path.Circle(point,200);
+			if(event.key === "a")
+		{
+			sound1.play();
+		}
+		else if(event.key === "q")
+		{
+			sound2.play();
+		}
+		else if(event.key === "w")
+		{
+			sound3.play();
+		}
+		else if(event.key === "e")
+		{
+			sound4.play();
+		}
+		else if(event.key === "r")
+		{
+			sound5.play();
+		}
+		else if(event.key === "t")
+		{
+			sound6.play();
+		}
+		else if(event.key === "y")
+		{
+			sound7.play();
+		}
+		else if(event.key === "u")
+		{
+			sound8.play();
+		}
+		else if(event.key === "i")
+		{
+			sound9.play();
+		}
+		else if(event.key === "o")
+		{
+			sound10.play();
+		}
+		else if(event.key === "p")
+		{
+			sound11.play();
+		}
+		else if(event.key === "a")
+		{
+			sound12.play();
+		}
+		else if(event.key === "s")
+		{
+			sound13.play();
+		}
+		else if(event.key === "d")
+		{
+			sound14.play();
+		}
+		else if(event.key === "f")
+		{
+			sound15.play();
+		}
+		else if(event.key === "g")
+		{
+			sound16.play();
+		}
+		else if(event.key === "h")
+		{
+			sound17.play();
+		}
+		else if(event.key === "j")
+		{
+			sound18.play();
+		}
+		else if(event.key === "k")
+		{
+			sound19.play();
+		}
+		else if(event.key === "l")
+		{
+			sound20.play();
+		}
+		else if(event.key === "z")
+		{
+			sound21.play();
+		}
+		else if(event.key === "x")
+		{
+			sound22.play();
+		}
+		else if(event.key === "c")
+		{
+			sound23.play();
+		}
+		else if(event.key === "v")
+		{
+			sound24.play();
+		}
+		else if(event.key === "b")
+		{
+			sound25.play();
+		}
+		else if(event.key === "n")
+		{
+			sound26.play();
+		}
+		else if(event.key === "m")
+		{
+			sound20.play();
+		}
+		
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			newCircle.fillColor = "rgb("+ r +", "+g +", "+ b +")";
+			circles.push(newCircle);
+			
+	}
+
+	function onFrame(event) 
+	{
+		for(var i=0;i<circles.length;i++)
+		{
+			circles[i].fillColor.hue += 1;	
+			circles[i].scale(0.9);
+		}
+	}
+	</script>
+    </head>
+    <body>
+			<h1>Press keys between A - Z.</h1>
+        <canvas id="myCanvas" resize></canvas>
+    </body>
+</html>
